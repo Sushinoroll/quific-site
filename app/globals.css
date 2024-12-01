@@ -2,20 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../app/fonts/Satoshi-Variable.woff2') format('woff2'),
+       url('../app/fonts/Satoshi-Variable.woff') format('woff'),
+       url('../app/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../app/fonts/Satoshi-VariableItalic.woff2') format('woff2'),
+       url('../app/fonts/Satoshi-VariableItalic.woff') format('woff'),
+       url('../app/fonts/Satoshi-VariableItalic.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: italic;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+.gradientText {
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --linear-fill: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 100%);
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Satoshi', Arial, Helvetica, sans-serif;
 }
